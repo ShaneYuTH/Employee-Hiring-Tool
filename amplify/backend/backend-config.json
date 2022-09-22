@@ -26,5 +26,40 @@
         ]
       }
     }
+  },
+  "api": {
+    "project": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "project2df869cc",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authproject2df869cc"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 2,
+                "apiKeyExpirationDate": "2022-09-24T01:48:08.863Z",
+                "description": ""
+              }
+            }
+          ]
+        }
+      }
+    }
   }
 }
